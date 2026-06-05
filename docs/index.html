@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoTrip - Calculadora de Pegada de Carbono</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <meta name="description" content="Calcule o impacto ambiental de suas viagens e descubra alternativas sustentáveis com a EcoTrip.">
+</head>
+<body>
+    <div class="bg-gradient"></div>
+    
+    <main class="container">
+        <header class="header">
+            <div class="logo">
+                <span class="icon">🌍</span>
+                <h1>EcoTrip</h1>
+            </div>
+            <p>Descubra a pegada de carbono da sua viagem e encontre alternativas mais verdes.</p>
+        </header>
+
+        <section class="calculator-card glass-panel">
+            <form id="calc-form" class="calculator-form">
+                <div class="form-group">
+                    <label for="transport_mode">Modo de Transporte</label>
+                    <select id="transport_mode" name="transport_mode" required>
+                        <option value="" disabled selected>Selecione um meio de transporte...</option>
+                        <option value="aviao_domestico">Avião (Doméstico)</option>
+                        <option value="aviao_internacional">Avião (Internacional)</option>
+                        <option value="carro_gasolina">Carro (Gasolina)</option>
+                        <option value="carro_hibrido">Carro (Híbrido)</option>
+                        <option value="carro_eletrico">Carro (Elétrico)</option>
+                        <option value="onibus_interestadual">Ônibus (Interestadual)</option>
+                        <option value="onibus_urbano">Ônibus (Urbano)</option>
+                        <option value="metrô">Metrô</option>
+                        <option value="trem">Trem</option>
+                        <option value="moto_gasolina">Moto (Gasolina)</option>
+                        <option value="bicicleta">Bicicleta</option>
+                        <option value="a_pe">A Pé</option>
+                    </select>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="distance_km">Distância (km) <span class="tooltip-icon" title="Distância em apenas uma direção.">ℹ️</span></label>
+                        <input type="number" id="distance_km" name="distance_km" min="0.1" step="0.1" placeholder="Ex: 50" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="passengers">Passageiros</label>
+                        <input type="number" id="passengers" name="passengers" min="1" value="1" required>
+                    </div>
+                </div>
+
+                <div class="form-group checkbox-group">
+                    <input type="checkbox" id="round_trip" name="round_trip">
+                    <label for="round_trip">Viagem de Ida e Volta</label>
+                </div>
+
+                <button type="submit" class="btn-primary">
+                    Calcular Impacto
+                    <span class="btn-icon">→</span>
+                </button>
+            </form>
+        </section>
+
+        <!-- Seção de Resultados, inicialmente escondida -->
+        <section id="results" class="results-section hidden">
+            <div class="results-header">
+                <h2>Seu Impacto Ambiental</h2>
+                <div id="eco-score-badge" class="eco-badge">Score: 100</div>
+            </div>
+
+            <div class="cards-grid">
+                <!-- Emissão Total -->
+                <div class="result-card glass-panel highlight-card">
+                    <h3>Emissão Total</h3>
+                    <div class="value-large">
+                        <span id="co2_total">0</span> <span class="unit">kg CO₂</span>
+                    </div>
+                    <p class="subtitle">Emissão por passageiro: <strong id="co2_per_passenger">0</strong> kg CO₂</p>
+                    <div class="rating-bar-container">
+                        <div id="rating-bar" class="rating-bar rating-baixo"></div>
+                    </div>
+                    <p id="rating-text" class="rating-label">Impacto Baixo</p>
+                </div>
+
+                <!-- Equivalências -->
+                <div class="result-card glass-panel equivalences-card">
+                    <h3>O que isso significa?</h3>
+                    <ul class="equivalences-list" id="equivalences-list">
+                        <!-- Populated by JS -->
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Alternativas Sustentáveis -->
+            <div id="alternatives-container" class="alternatives-container glass-panel mt-4">
+                <h3>Alternativas Sustentáveis</h3>
+                <div id="alternatives-list" class="alternatives-list">
+                    <!-- Populated by JS -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>Desenvolvido com tecnologia EcoTrip Agent.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

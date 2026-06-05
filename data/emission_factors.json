@@ -1,0 +1,34 @@
+{
+  "_metadata": {
+    "descricao": "Fatores de emissão de CO2 por modo de transporte",
+    "unidade": "kg CO2 por km por passageiro",
+    "fontes": [
+      "IPCC AR6 (2023) — Chapter 10: Transport",
+      "ICAO Carbon Footprint Calculator",
+      "CETESB — Relatório de Emissões Veiculares no Estado de SP (2022)",
+      "Our World in Data — CO2 emissions by transport mode"
+    ],
+    "contexto": "Valores representam médias para o Brasil. Emissões reais variam conforme ocupação, modelo do veículo e perfil da rota.",
+    "ultima_atualizacao": "2025"
+  },
+  "fatores": {
+    "aviao_domestico":       { "co2_per_km": 0.255, "nota": "Inclui efeito de forçamento radiativo em altitude" },
+    "aviao_internacional":   { "co2_per_km": 0.195, "nota": "Voos mais longos têm maior eficiência por km" },
+    "carro_gasolina":        { "co2_per_km": 0.192, "nota": "Baseado em consumo médio de 10 km/L" },
+    "carro_hibrido":         { "co2_per_km": 0.106, "nota": "Redução ~45% vs gasolina puro" },
+    "carro_eletrico":        { "co2_per_km": 0.050, "nota": "Baseado na matriz elétrica brasileira (alta renovável)" },
+    "onibus_interestadual":  { "co2_per_km": 0.089, "nota": "Com ocupação média de 60%" },
+    "onibus_urbano":         { "co2_per_km": 0.105, "nota": "Com ocupação média de 40% (urbano)" },
+    "metrô":                 { "co2_per_km": 0.041, "nota": "Sistemas elétricos — emissão indireta da geração" },
+    "trem":                  { "co2_per_km": 0.035, "nota": "Trens elétricos interurbanos" },
+    "moto_gasolina":         { "co2_per_km": 0.113, "nota": "Emissão por passageiro" },
+    "bicicleta":             { "co2_per_km": 0.000, "nota": "Emissão operacional zero" },
+    "a_pe":                  { "co2_per_km": 0.000, "nota": "Emissão operacional zero" }
+  },
+  "equivalencias_referencia": {
+    "co2_por_hora_netflix_4k": 0.036,
+    "co2_por_carga_smartphone": 0.0082,
+    "co2_absorvido_arvore_por_ano": 21.77,
+    "fonte": "IEA (2023), Carbon Trust"
+  }
+}
