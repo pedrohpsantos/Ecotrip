@@ -110,7 +110,7 @@ GEMINI_MODEL=gemini-2.5-flash
 ### Via Google ADK Web UI
 
 ```bash
-adk web
+uv run adk web
 ```
 
 Acesse `http://localhost:8080` e selecione `ecotrip_agent`.
@@ -118,7 +118,7 @@ Acesse `http://localhost:8080` e selecione `ecotrip_agent`.
 ### Via Terminal (ADK CLI)
 
 ```bash
-adk run ecotrip_agent
+uv run adk run ecotrip_agent
 ```
 
 ### Exemplos de Input
